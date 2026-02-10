@@ -31,7 +31,7 @@ window.addEventListener("load", () => {
 });
 
 /* Escape logic */
-noBtn.addEventListener("mouseover", () => {
+noBtn.addEventListener("click", () => {
   if (!noReady || noClickable) return;
 
   moveNoButton();
