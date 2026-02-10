@@ -77,6 +77,8 @@ button {
 
   /* TRANSITION OFF INITIALLY */
   transition: none;
+
+  touch-action: manipulation; /* improves tap responsiveness */
 }
 
 

@@ -30,15 +30,22 @@ window.addEventListener("load", () => {
   resetNoButton();
 });
 
-/* Escape logic */
 noBtn.addEventListener("mouseover", () => {
   moveNoIfReady();
 });
 
 // Mobile tap
 noBtn.addEventListener("touchstart", (e) => {
-  e.preventDefault(); // Prevent accidental click
-  moveNoIfReady();
+  if (!noClickable) {
+    e.preventDefault(); // prevent click before dodge
+    moveNoIfReady();
+  }
+});
+
+// Click (works for desktop & mobile)
+noBtn.addEventListener("click", () => {
+  if (!noClickable) return; // only clickable after 10 tries
+  showCatScreen();
 });
 
 /* No clicked after 10 tries */
