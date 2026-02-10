@@ -31,21 +31,14 @@ window.addEventListener("load", () => {
 });
 
 /* Escape logic */
-noBtn.addEventListener("click", () => {
-  if (!noReady || noClickable) return;
+noBtn.addEventListener("mouseover", () => {
+  moveNoIfReady();
+});
 
-  moveNoButton();
-
-  if (noCount < noTexts.length) {
-    noBtn.textContent = noTexts[noCount];
-    noCount++;
-  }
-
-  if (noCount >= 10) {
-    noClickable = true;
-    noBtn.textContent = "Okay… you win 😼";
-    noBtn.style.transition = "none";
-  }
+// Mobile tap
+noBtn.addEventListener("touchstart", (e) => {
+  e.preventDefault(); // Prevent accidental click
+  moveNoIfReady();
 });
 
 /* No clicked after 10 tries */
@@ -112,7 +105,9 @@ function showCatScreen() {
   backBtn.classList.remove("hidden");
 }
 
-function moveNoButton() {
+function moveNoIfReady() {
+  if (!noReady || noClickable) return;
+
   const maxX = window.innerWidth - noBtn.offsetWidth;
   const maxY = window.innerHeight - noBtn.offsetHeight;
 
@@ -121,6 +116,17 @@ function moveNoButton() {
 
   noBtn.style.left = `${randomX}px`;
   noBtn.style.top = `${randomY}px`;
+
+  if (noCount < noTexts.length) {
+    noBtn.textContent = noTexts[noCount];
+    noCount++;
+  }
+
+  if (noCount >= 10) {
+    noClickable = true;
+    noBtn.textContent = "Okay… you win 😼";
+    noBtn.style.transition = "none";
+  }
 }
 
 function resetNoButton() {
@@ -140,5 +146,3 @@ function resetNoButton() {
     noReady = true;
   });
 }
-
-
