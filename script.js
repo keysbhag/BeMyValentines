@@ -8,7 +8,6 @@ const backBtn = document.getElementById("backBtn");
 const yesCat = document.getElementById("yesCat");
 const yesBackBtn = document.getElementById("yesBackBtn");
 
-
 const noTexts = [
   "Are you sure? 😅",
   "Really sure?? 🥺",
@@ -57,13 +56,32 @@ noBtn.addEventListener("click", () => {
 });
 
 /* Yes clicked */
+/* Yes button clicked — show dancing cat */
 yesBtn.addEventListener("click", () => {
-  question.textContent = "YAYYYYY 💖💖💖";
-  message.textContent = "I can’t wait to be your Valentine 😘";
+  question.textContent =
+    "YAYYYYY 💖💖💖 I am the happiest man in the world now";
+  message.textContent = "This is how happy I am 😘";
   message.classList.remove("hidden");
 
   yesBtn.style.display = "none";
   noBtn.style.display = "none";
+
+  yesCat.classList.remove("hidden");
+  yesBackBtn.classList.remove("hidden");
+});
+
+/* Yes cat back button */
+yesBackBtn.addEventListener("click", () => {
+  yesCat.classList.add("hidden");
+  yesBackBtn.classList.add("hidden");
+  message.classList.add("hidden");
+
+  question.textContent = "Will you be my Valentine? 💘";
+
+  yesBtn.style.display = "inline-block";
+  noBtn.style.display = "inline-block";
+
+  resetNoButton();
 });
 
 /* Back button */
@@ -123,29 +141,4 @@ function resetNoButton() {
   });
 }
 
-/* Yes button clicked — show dancing cat */
-yesBtn.addEventListener("click", () => {
-  question.textContent = "YAYYYYY 💖💖💖";
-  message.textContent = "I can’t wait to be your Valentine 😘";
-  message.classList.remove("hidden");
 
-  yesBtn.style.display = "none";
-  noBtn.style.display = "none";
-
-  yesCat.classList.remove("hidden");
-  yesBackBtn.classList.remove("hidden");
-});
-
-/* Yes cat back button */
-yesBackBtn.addEventListener("click", () => {
-  yesCat.classList.add("hidden");
-  yesBackBtn.classList.add("hidden");
-  message.classList.add("hidden");
-
-  question.textContent = "Will you be my Valentine? 💘";
-
-  yesBtn.style.display = "inline-block";
-  noBtn.style.display = "inline-block";
-
-  resetNoButton();
-});
