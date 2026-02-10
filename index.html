@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Be My Valentine 💖</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="question">Will you be my Valentine? 💘</h1>
+
+      <div class="buttons">
+        <button id="yesBtn">Yes 💕</button>
+
+        <!-- Placeholder keeps layout stable -->
+        <div class="no-placeholder"></div>
+
+        <!-- Actual moving button -->
+        <button id="noBtn">No 🙃</button>
+      </div>
+
+      <p id="message" class="hidden"></p>
+      <img
+        id="catImage"
+        src="./grumpy-cat-isolated-on-transparent-background-expressive-feline-with-attitude-png.png"
+        class="hidden cat"
+      />
+      <button id="backBtn" class="hidden back-btn">Try Again 💕</button>
+
+      <!-- Dancing cat for Yes -->
+      <img
+        id="yesCat"
+        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTdnbGQ2ZGt2ZG9hdnUxN3BvMDhhZHF5aTE1aXUzc3BueHVkbjNvbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BK1EfIsdkKZMY/giphy.gif"
+        alt="Dancing cat"
+        class="hidden cat"
+      />
+
+      <button id="yesBackBtn" class="hidden back-btn">Play Again? 💕</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
