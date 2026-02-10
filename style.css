@@ -14,16 +14,18 @@ body {
 
 .container {
   background: white;
-  padding: 40px;
+  padding: 30px;
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
   max-width: 420px;
+  width: 90%;
 }
 
 h1 {
   margin-bottom: 30px;
   color: #d6336c;
+  font-size: 1.6rem;
 }
 
 .buttons {
@@ -70,17 +72,12 @@ button {
 #noBtn {
   background-color: #adb5bd;
   color: white;
-
   position: fixed;
   left: 0;
   top: 0;
-
-  /* TRANSITION OFF INITIALLY */
   transition: none;
-
-  touch-action: manipulation; /* improves tap responsiveness */
+  touch-action: manipulation;
 }
-
 
 /* Message */
 .hidden {
@@ -122,6 +119,7 @@ button {
   margin-top: 20px;
 }
 
+/* MOBILE OPTIMIZATION */
 @media (max-width: 480px) {
   .buttons {
     flex-direction: column;
@@ -132,6 +130,6 @@ button {
   .no-placeholder {
     width: 180px;
     height: 60px;
-    font-size: 18px;
+    font-size: 20px;
   }
 }

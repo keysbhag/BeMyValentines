@@ -30,33 +30,26 @@ window.addEventListener("load", () => {
   resetNoButton();
 });
 
+/* Desktop hover */
 noBtn.addEventListener("mouseover", () => {
   moveNoIfReady();
 });
 
-// Mobile tap
+/* Mobile tap */
 noBtn.addEventListener("touchstart", (e) => {
   if (!noClickable) {
-    e.preventDefault(); // prevent click before dodge
+    e.preventDefault(); // prevent accidental click
     moveNoIfReady();
   }
 });
 
-// Click (works for desktop & mobile)
-noBtn.addEventListener("click", () => {
-  if (!noClickable) return; // only clickable after 10 tries
-  showCatScreen();
-});
-
-/* No clicked after 10 tries */
+/* Click (desktop & mobile) */
 noBtn.addEventListener("click", () => {
   if (!noClickable) return;
-
   showCatScreen();
 });
 
-/* Yes clicked */
-/* Yes button clicked — show dancing cat */
+/* Yes clicked — show dancing cat */
 yesBtn.addEventListener("click", () => {
   question.textContent =
     "YAYYYYY 💖💖💖 I am the happiest man in the world now";
@@ -84,7 +77,7 @@ yesBackBtn.addEventListener("click", () => {
   resetNoButton();
 });
 
-/* Back button */
+/* Cat screen back button */
 backBtn.addEventListener("click", () => {
   catImage.classList.add("hidden");
   backBtn.classList.add("hidden");
