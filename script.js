@@ -10,7 +10,7 @@ const yesBackBtn = document.getElementById("yesBackBtn");
 
 const noTexts = [
   "Are you sure? 😅",
-  "Really sure?? 🥺",
+  "Really sure??",
   "Think again 😭",
   "Last chance 😳",
   "Okay okay chill 😬",
@@ -69,7 +69,7 @@ yesBackBtn.addEventListener("click", () => {
   yesBackBtn.classList.add("hidden");
   message.classList.add("hidden");
 
-  question.textContent = "Will you be my Valentine? 💘";
+  question.textContent = "Hi Dhanya, will you be my Valentine? 💘";
 
   yesBtn.style.display = "inline-block";
   noBtn.style.display = "inline-block";
@@ -83,7 +83,7 @@ backBtn.addEventListener("click", () => {
   backBtn.classList.add("hidden");
   message.classList.add("hidden");
 
-  question.textContent = "Will you be my Valentine? 💘";
+  question.textContent = "Hi Dhanya, will you be my Valentine? 💘";
 
   yesBtn.style.display = "inline-block";
   noBtn.style.display = "inline-block";
@@ -124,7 +124,7 @@ function moveNoIfReady() {
 
   if (noCount >= 10) {
     noClickable = true;
-    noBtn.textContent = "Okay… you win 😼";
+    noBtn.textContent = "Okay… you win. Click me 😼";
     noBtn.style.transition = "none";
   }
 }
